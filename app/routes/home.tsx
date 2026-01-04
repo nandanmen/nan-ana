@@ -96,7 +96,7 @@ export default function Home() {
 						CDG
 					</p>
 				</div>
-				<p className="text-center flex flex-col items-center md:flex-row text-7xl font-bold">
+				<p className="text-center flex flex-col items-center md:flex-row md:gap-5 text-7xl font-bold">
 					<span className="flex gap-4">
 						<span>
 							{days}
