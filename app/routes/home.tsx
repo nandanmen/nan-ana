@@ -58,12 +58,7 @@ export default function Home() {
 	}, []);
 
 	return (
-		<main className="flex mt-36 justify-center h-dvh">
-			<img
-				src="/eiffel.png"
-				className="fixed -bottom-[100px] -right-4 scale-125"
-				alt="Eiffel Tower"
-			/>
+		<main className="flex flex-col mt-20 items-center w-screen overflow-hidden">
 			<div className="flex flex-col gap-4 items-center">
 				<h1 className="flex flex-col leading-[0.8] text-3xl font-bold mb-20">
 					<span>nan</span>
@@ -128,6 +123,11 @@ export default function Home() {
 					</span>
 				</p>
 			</div>
+			<img
+				src="/eiffel.png"
+				className="-mb-[100px] mt-16 ml-4 scale-125"
+				alt="Eiffel Tower"
+			/>
 		</main>
 	);
 }
