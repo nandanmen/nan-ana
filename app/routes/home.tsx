@@ -58,8 +58,17 @@ export default function Home() {
 	}, []);
 
 	return (
-		<main className="flex items-center justify-center h-screen">
+		<main className="flex mt-36 justify-center h-dvh">
+			<img
+				src="/eiffel.png"
+				className="fixed -bottom-[100px] -right-4 scale-125"
+				alt="Eiffel Tower"
+			/>
 			<div className="flex flex-col gap-4 items-center">
+				<h1 className="flex flex-col leading-[0.8] text-3xl font-bold mb-20">
+					<span>nan</span>
+					<span>ana</span>
+				</h1>
 				<div className="text-4xl font-medium flex">
 					<p
 						style={{
@@ -118,10 +127,6 @@ export default function Home() {
 						</span>
 					</span>
 				</p>
-				<h1 className="flex flex-col leading-[0.8] text-3xl font-bold mt-20">
-					<span>nan</span>
-					<span>ana</span>
-				</h1>
 			</div>
 		</main>
 	);
