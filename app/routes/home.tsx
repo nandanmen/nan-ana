@@ -58,9 +58,9 @@ export default function Home() {
 	}, []);
 
 	return (
-		<main className="flex flex-col mt-20 items-center w-screen overflow-hidden">
+		<main className="flex flex-col mt-16 items-center w-screen overflow-hidden">
 			<div className="flex flex-col gap-4 items-center">
-				<h1 className="flex flex-col leading-[0.8] text-3xl font-bold mb-20">
+				<h1 className="flex flex-col leading-[0.8] text-3xl font-bold mb-16">
 					<span>nan</span>
 					<span>ana</span>
 				</h1>
@@ -125,7 +125,7 @@ export default function Home() {
 			</div>
 			<img
 				src="/eiffel.png"
-				className="-mb-[100px] mt-16 ml-4 scale-125"
+				className="-mb-[100px] mt-12 ml-6 scale-125"
 				alt="Eiffel Tower"
 			/>
 		</main>
