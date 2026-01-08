@@ -125,7 +125,7 @@ export default function Home() {
 			</div>
 			<img
 				src="/eiffel.png"
-				className="-mb-[100px] mt-12 ml-6 scale-125"
+				className="-mb-[100px] mt-12 ml-6 scale-125 dark:invert"
 				alt="Eiffel Tower"
 			/>
 		</main>
