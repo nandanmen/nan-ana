@@ -27,7 +27,12 @@ const calculateTime = () => {
 
   // If March 10th 13:35 has passed this year, target next year
   if (targetDate < now) {
-    targetDate.setFullYear(now.getFullYear() + 1);
+    return {
+      days: 0,
+      hours: 0,
+      minutes: 0,
+      seconds: 15,
+    };
   }
 
   const difference = targetDate.getTime() - now.getTime();
@@ -36,7 +41,7 @@ const calculateTime = () => {
       days: 0,
       hours: 0,
       minutes: 0,
-      seconds: 0,
+      seconds: 15,
     };
   }
 
@@ -171,13 +176,23 @@ export default function Home() {
   const [days, setDays] = useState(0);
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(0);
-  const [seconds, setSeconds] = useState(0);
+  const [seconds, setSeconds] = useState(15);
 
   const intervalRef = useRef<number | null>(null);
 
   useEffect(() => {
     const setTime = () => {
       const { days, hours, minutes, seconds } = calculateTime();
+      if (days === 0 && hours === 0 && minutes === 0 && seconds <= 15) {
+        setSeconds((s) => {
+          const next = s - 1;
+          if (s < 0) {
+            clearInterval(intervalRef.current);
+          }
+          return next;
+        });
+        return;
+      }
       setDays(days);
       setHours(hours);
       setMinutes(minutes);
@@ -272,14 +287,33 @@ export default function Home() {
               <button
                 type="button"
                 onClick={() => {
+                  const { days, hours, minutes, seconds } = calculateTime();
                   const setTime = () => {
                     const { days, hours, minutes, seconds } = calculateTime();
+                    if (
+                      days === 0 &&
+                      hours === 0 &&
+                      minutes === 0 &&
+                      seconds <= 15
+                    ) {
+                      setSeconds((s) => {
+                        const next = s - 1;
+                        if (s < 0) {
+                          clearInterval(intervalRef.current);
+                        }
+                        return next;
+                      });
+                      return;
+                    }
                     setDays(days);
                     setHours(hours);
                     setMinutes(minutes);
                     setSeconds(seconds);
                   };
-                  setTime();
+                  setDays(days);
+                  setHours(hours);
+                  setMinutes(minutes);
+                  setSeconds(seconds);
                   intervalRef.current = setInterval(setTime, 1000);
                 }}
                 className="mt-20 px-4 py-2 text-sm font-medium rounded border border-neutral-300 dark:border-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-800"
