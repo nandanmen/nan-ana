@@ -108,7 +108,7 @@ function DoneScreen() {
     { src: "/macaron.png", alt: "Macaron" },
     { src: "/coffee.png", alt: "Coffee" },
   ];
-  const circleRadius = 200;
+  const circleRadius = 140;
   const circleItemSize = 72;
 
   const offset = useMotionValue(0);
@@ -160,7 +160,7 @@ function DoneScreen() {
           src="/bon-voyage.png"
           alt="Bon voyage"
           className="object-contain dark:invert rotate-[-5deg]"
-          style={{ width: 300, height: "auto" }}
+          style={{ width: 200, height: "auto" }}
         />
       </div>
     </div>
@@ -203,11 +203,7 @@ export default function Home() {
   }
 
   const countdownSizeClass =
-    scaleLevel === 0 || scaleLevel === 1
-      ? "text-7xl"
-      : scaleLevel === 2
-        ? "text-9xl"
-        : "text-[10rem]";
+    scaleLevel === 0 || scaleLevel === 1 ? "text-7xl" : "text-9xl";
 
   const countdownReachedZero =
     days === 0 && hours === 0 && minutes === 0 && seconds < 0;
@@ -286,7 +282,7 @@ export default function Home() {
                   setTime();
                   intervalRef.current = setInterval(setTime, 1000);
                 }}
-                className="mt-6 px-4 py-2 text-sm font-medium rounded border border-neutral-300 dark:border-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-800"
+                className="mt-20 px-4 py-2 text-sm font-medium rounded border border-neutral-300 dark:border-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-800"
               >
                 Reset
               </button>
